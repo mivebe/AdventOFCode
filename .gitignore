@@ -1,2 +1,14 @@
 # Dependency directories
 node_modules/
+
+# IDE folders
+.code/
+.idea/
+.vs/
+
+# Cmake generatio directories
+
+cmake-build-debug/
+
+# Build folders
+out/
