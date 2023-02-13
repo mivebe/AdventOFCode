@@ -55,7 +55,7 @@ const getStacks = (crates, max) => {
 
 const stacks = getStacks(crates, max)
 
-const executeMoves = (moves, stacks) => {
+const executeMoves = (moves, stacks, reversed) => {
     for (const move of moves) {
         const splitMove = move.split(' ')
 
@@ -69,27 +69,26 @@ const executeMoves = (moves, stacks) => {
         }
 
         console.log(move);
-        stacks[to].push(...toBeMoved)
+        reversed ? stacks[to].push(...toBeMoved.reverse()) : stacks[to].push(...toBeMoved)
     }
     return stacks
 }
-const asd = [
-    [],
-    [],
-    [],
-]
 
-const finalStacks = executeMoves(moves, stacks)
-console.log(finalStacks);
+// const finalStacks = executeMoves(moves, stacks)
+const finalStacks2 = executeMoves(moves, stacks, true)
+// console.log(finalStacks);
+console.log(finalStacks2);
 
-const getTopStacks = (finalStacks) => {
+const getTopStacks = (stacks) => {
     let topStacks = ''
-    for (const stack of finalStacks) {
+    for (const stack of stacks) {
         topStacks += stack[stack.length - 1];
     }
     return topStacks
 }
 
-const topStacks = getTopStacks(finalStacks)
+// const topStacks = getTopStacks(finalStacks)
+const topStacks2 = getTopStacks(finalStacks2)
 
-console.log(topStacks);
+// console.log(topStacks);
+console.log(topStacks2);
